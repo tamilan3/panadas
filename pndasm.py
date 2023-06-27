@@ -1,0 +1,10 @@
+import pandas as pd
+df1=pd.read_excel("/home/tamilan/Documents/xl_writter/report.xlsx")
+df2=pd.read_excel("/home/tamilan/Documents/xl_writter/billable.xlsx")
+df3=pd.read_excel("/home/tamilan/Documents/xl_writter/non_billable.xlsx")
+df4=pd.read_excel("/home/tamilan/Documents/xl_writter/total.xlsx")
+mergeres=pd.merge(df1,df2,on=df1.columns[0],how='inner')
+mergeres2=pd.merge(df1,df3,on=df1.columns[0],how='inner')
+mergeres3=pd.merge(df1,df4,on=df1.columns[0],how='inner')
+new=pd.concat([mergeres,mergeres2,mergeres3])
+print(new)
