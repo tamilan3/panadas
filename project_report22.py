@@ -15,7 +15,7 @@ mergeres1=mergeres1.rename(columns={'Spent time_x':"Spent Time",'Spent time_y':'
 mergeres1=pd.DataFrame(mergeres1)
 mergeres1=pd.merge(mergeres1,df4,on=mergeres1.columns[0],how="outer")
 mergeres1=mergeres1.drop(mergeres1.columns[[4]],axis=1)
-mergeres1=mergeres1.rename(columns={'Spent time':"NoWorkType"})
+mergeres1=mergeres1.rename(columns={'Item':'Projects','Spent time':"NoWorkType"})
 mergeres1.fillna(0, inplace=True)
 print(mergeres1)
 date_now=date.today()
